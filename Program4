@@ -1,0 +1,24 @@
+using System;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str;
+            Console.WriteLine("Enter a String:");
+            str = Console.ReadLine();
+            int cc = 0, cd = 0;
+            foreach(char c in str)
+            {
+                if (char.IsLetter(c))
+                    cc += 1;
+                else if (char.IsDigit(c))
+                    cd += 1;
+            }
+            Console.WriteLine(" Total no.of characters:{0} ", cc);
+            Console.WriteLine(" Total no.of digits:{0} ", cd);
+        }
+    }
+}
