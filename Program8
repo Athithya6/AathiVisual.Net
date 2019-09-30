@@ -1,0 +1,98 @@
+#pragma once
+#define SIZE 10
+#include<iostream>
+using namespace std;
+
+class myStack
+{
+private:
+	int arr[SIZE];
+	int tos;
+	bool isEmpty();
+	bool isFull();
+public:
+	myStack();
+	virtual ~myStack();
+	void push(int);
+	int pop();
+};
+	
+	myStack::myStack()
+	{
+		for (int i = 0; i < SIZE; i++)
+			arr[i] = 0;
+		tos = -1;
+	}
+
+	//virtual ~myStack()
+	//{
+
+	//}
+
+
+bool myStack::isEmpty()
+{
+	return true;
+}
+
+bool myStack::isFull()
+{
+	if (tos == SIZE - 1)
+	{
+		return true;
+	}
+	else
+		return false;
+	
+}
+
+void myStack::push(int i)
+{
+	if (isFull())
+	{
+		return;
+	}
+	else
+	{
+		tos++;
+		arr[tos] = i;
+	}
+		cout << " Entered element is : " << arr[i];
+	
+}
+
+int myStack::pop()
+{
+	if (isEmpty())
+	{
+		cout << " Stack is empty ";
+		return -1;
+	}
+	else
+	{
+		int val = arr[tos];
+		tos--;
+		return val;
+	}
+}
+
+#include "myStack.h"
+#include "iostream"
+using namespace std;
+
+
+int main()
+{
+	myStack BookStack;
+	cout << " Size of Book Stack : " << sizeof(BookStack) << endl;
+	BookStack.push(100);
+	BookStack.push(200);
+	BookStack.push(300);
+
+	cout << BookStack.pop() << endl;
+	cout << BookStack.pop() << endl;
+	cout << BookStack.pop() << endl;
+	cout << BookStack.pop() << endl;
+
+	return 0;
+}
