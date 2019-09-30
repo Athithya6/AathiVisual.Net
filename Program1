@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int marks;
+            string str;
+            Console.WriteLine("Enter your name");
+            str = Console.ReadLine();
+            Console.Write("Enter Marks: ");
+            marks = int.Parse(Console.ReadLine());
+            Console.WriteLine("Hello "+str+" You have scored "+ marks +" in English");
+            Console.WriteLine("Hello {0} You have scored {1} in English",str,marks);
+        }
+    }
+}
